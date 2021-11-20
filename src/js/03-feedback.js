@@ -1,6 +1,6 @@
 import throttle from 'lodash/throttle';
 
-// const form = document.querySelector('form');
+// const form = document.querySelector('form .feedback-form');
 const emailInput = document.querySelector('input[name=email]');
 const messageInput = document.querySelector('textarea[name=message]');
 const btnSubmit = document.querySelector('button[type=submit]');
@@ -39,12 +39,13 @@ function onMessageType() {
 
 function onButtonSubmit(e) {
   e.preventDefault();
-  const userInfoSubmited = JSON.parse(getLocalStorage);
+  const userInfoSubmited = JSON.parse(localStorage.getItem('feedback-form-state'));
   console.log('user info submited: ', userInfoSubmited);
 
   localStorage.removeItem('feedback-form-state');
   emailInput.value = '';
   messageInput.value = '';
+  //   form.reset();
 }
 
 // ----------local storage check if saved ----------
