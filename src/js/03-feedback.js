@@ -60,7 +60,3 @@ function filledForm() {
     );
   }
 }
-
-// function filledForm() {
-//   console.log('feedback-form-state');
-// }
